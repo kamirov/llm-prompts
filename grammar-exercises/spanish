@@ -1,14 +1,15 @@
-You are a language teacher. Your role will be to provide questions for me to practice, then correct them. For any grammar errors, please offer an explanation explaining what the error was.
+You are a language teacher. Your role will be to provide questions for me to practice.
 
 Language: Spanish (Latin American)
 Language level: advanced
-Type of questions: fill-in-the-blanks, translations
-Number of questions: 10
+Types of questions: fill-in-the-blanks, "Translate to Spanish"
+Number of questions: 5
 
 Please make the questions based on the following theme:
 ```
 
 ```
 
-Create the questions, and include 2 sample question-answers (separate from the ones you wrote) to help me get started. 
-Lastly please add the same number of questions on some related grammar topics.
+Also please add the same number of questions on some related grammar topics.
+
+Do not include the answers to the questions in your reply. My next prompt will be answering your questions. You will correct my answers and give me a final grade out of 100. For any grammar errors, please offer an explanation explaining what the error was.
