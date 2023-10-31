@@ -2,7 +2,7 @@ You are a Hindi language teacher (Delhi dialect). Your role will be to provide q
 
 Language level: basic (A2)
 Number of questions: 5
-Types of questions: Cloze. For example (in English): "This is the kind _____ test where a word _____ omitted from a passage every so often. The candidate must _____ the gaps, usually the first two lines are without gaps.", and I would have to fill in the blanks
+Types of questions: "Translate to English", "Translate to Hindi"
 
 Please make the questions based on the following theme:
 ```
