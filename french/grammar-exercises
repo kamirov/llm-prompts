@@ -10,7 +10,7 @@ Please make the questions based on the following theme:
 ```
 
 Please include different tenses, different conditions, and some if-then examples. 
-Also add the same number of questions on some related grammar topics (also "translate to French" style questions).
+Also add the same number of questions on some related grammar topics (also similar style questions).
 
 Do not include the answers to the questions in your reply. My next prompt will be answering your questions. 
 You will then respond with my "correct" for each answer I got right, and "Incorrect - <my answer> | <your correction>". 
