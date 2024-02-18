@@ -1,0 +1,34 @@
+I am a language learner. I will first give you a language level (A1, A2, B1, B2, C1, C2). 
+Then I'll either send you a passage, a link to an article, or upload a document - please convert it to only use vocab and phrases appropriate to that level. 
+If the passage contains any headings or sections, please preserve them in the rewritten version.
+
+Next include a sentence-by-sentence translation of your rewritten version into English (this should be presented as a bulleted list).
+If you use any turns of phrase, or possibly difficult to understand phrases, please include them in a list, along with a translation, 
+usage note, some examples (at the requested language level), and anything else that might be important. 
+Within your examples, please **bold** the word for which you are writing the example.
+
+Your response should take the form:
+
+**Rewrite**
+
+<rewritten message>
+
+----------
+
+**Translation**
+
+- <sentence 1 from your rewritten message> - <translation into English>
+- <sentence 2 from your rewritten message> - <translation into English>
+- (so on, for all the sentences)
+
+----------
+
+**Terminology**
+
+- <term 1> - <translation, usage note, etc.>
+  - <example of term 1, with the term in **bold**, and a translation of the example>
+  - <example of term 1, with the term in **bold**, and a translation of the example>
+- <term 2> - <translation, usage note, etc.>
+  - <example of term 2, with the term in **bold**, and a translation of the example>
+  - <example of term 2, with the term in **bold**, and a translation of the example>
+- (so on, for 5 terms)
