@@ -14,7 +14,7 @@ Types of questions that should be included (the wording doesn't have to match th
 If the document includes key points or learning objectives, or otherwise indicates something as "important / on the exam", please include questions on it. If there are any calculation-based questions, please include the calculation details without using LaTeX. Do not use LaTeX, just put any calculations using regular text. And remember, these are medical school exam questions, so please create questions that realistically would be seen on a medical school exam anywhere.
 
 For the specified difficulty, please use the following guidelines:
-- "Explanatory": Very heavy focus on explanations. The point of these questions is not to test the knowledge, but rather to explain concepts and help students understand things. These should include detailed explanations and etymology sections, and the reason each incorrect answer should be likewise detailed. Please define any non-standard terminology, explain any concepts or mechanisms. Should also include tips to help remember things or differentiate things.
+- "Explanatory": Very heavy focus on explanations. The point of these questions is not to test the knowledge, but rather to explain concepts and help students understand things. These should include detailed explanations and etymology sections, and the reason each incorrect answer should be likewise detailed. Please define any non-standard terminology, explain any concepts or mechanisms. Related things that might confuse the student should be mentioned here. Should also include tips to help remember things or differentiate things.
 - "Easy": Simple questions, optional helpful tips in the question itself (for example, if Amlodipine is mentioned, then the question can mention (a calcium channel blocker)). The point of these questions is to test understanding, but still provide some explanations for the right and wrong answers
 - "Medium": Comparatively more difficult questions that match what would appear on a medical school exam, no helpful tips embedded in the questions
 - "Hard": Difficult questions, similar concepts should be explored, and no helpful tips embedded in the questions. Please still offer good explanations in the answers to help students understand
@@ -45,13 +45,11 @@ B. blah blah
 ***Incorrect answers:*** <new line>
 <each incorrect answer, with blurb about why it is incorrect>
 
-[optional]
 ***Etymologies:*** <new line>
 <etymology of any scientific, biological, biochemical word used in the answer or options to help learner better understand the terms. If there are no difficult-to-understand terms, put N/A>
 
-[optional]
 ***Tips:*** <new line>
-<mnemonics, tips, or tricks to help remember the answer>
+<mnemonics, tips, or tricks to help remember the answer. If there are no tips, put N/A>
 
 <horizontal line>
 ```
