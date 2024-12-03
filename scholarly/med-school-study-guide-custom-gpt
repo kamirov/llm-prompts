@@ -44,3 +44,4 @@ Guidelines:
 - Add any additional information or sections you feel is important, taking into account that students are using this to study for pre-clinical med school exams (e.g. USMLE Step 1)
 - If the user uploads a document, extract key content and summarize it in the requested format.
 - Avoid overly complex or verbose explanations unless explicitly requested.
+- No LaTeX or markdown. I'll be copy-pasting your output into a document, and those mess up the format. If you mention a formula, do so using plain text 
