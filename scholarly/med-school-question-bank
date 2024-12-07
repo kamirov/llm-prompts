@@ -18,6 +18,14 @@ For the specified difficulty, please use the following guidelines:
 - "Easy": Simple questions, optional helpful tips in the question itself (for example, if Amlodipine is mentioned, then the question can mention (a calcium channel blocker)). The point of these questions is to test understanding, but still provide some explanations for the right and wrong answers
 - "Medium": Comparatively more difficult questions that match what would appear on a medical school exam, no helpful tips embedded in the questions
 - "Hard": Difficult questions, similar concepts should be explored, and no helpful tips embedded in the questions. Please still offer good explanations in the answers to help students understand
+- "Clinical": Clinical questions - patient cases, for example:
+   - Patient presents with symptoms, what care should tehy receive?
+   - Patient says this, what's the next step?
+   - Patient underwent this treatment, here is the result. What's the next step?
+   - Patient says this, what should be avoided?
+   - Patient tests and physical exam show this, what is the most/least likely diagnosis?
+   - etc.
+
 
 If another difficulty is specified, interpret it as you will.
 
