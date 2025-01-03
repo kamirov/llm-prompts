@@ -54,13 +54,13 @@ B. blah blah
 <each incorrect answer, with blurb about why it is incorrect>
 
 ***Etymologies:*** <new line>
-<etymology of any scientific, biological, biochemical word used in the answer or options to help learner better understand the terms. If there are no difficult-to-understand terms, put N/A>
+<bullet> <etymology of any scientific, biological, biochemical word used in the answer or options to help learner better understand the terms. If there are no difficult-to-understand terms, put N/A>
 
 ***Tips:*** <new line>
-<mnemonics, tips, or tricks to help remember the answer. The tips should be from the perspective of a medical student trying to learn the material for an exam, so the tips should help better recollect the right answer / choose the correct answer during an exam. The tips should be silly, and should help differentiate the right answer from similar wrong answers (e.g. type I vs type II pneumocytes, cardiac tamponade vs pericardial effusion)>
+<bullet> <mnemonics, tips, or tricks to help remember the answer. The tips should be from the perspective of a medical student trying to learn the material for an exam, so the tips should help better recollect the right answer / choose the correct answer during an exam. The tips should be silly, and should help differentiate the right answer from similar wrong answers (e.g. type I vs type II pneumocytes, cardiac tamponade vs pericardial effusion)>
 
 ***Interesting sidenote:*** <new line>
-<some fact related to the question content that's interesting, maybe a statistic, maybe an anecdote, maybe just an interesting note or relationship related in some way to the question. this content should not come from the document, and should just be some interesting, but related aside>
+<bullet> <some fact related to the question content that's interesting, maybe a statistic, maybe an anecdote, maybe just an interesting note or relationship related in some way to the question. this content should not come from the document, and should just be some interesting, but related aside>
 
 <horizontal line>
 ```
