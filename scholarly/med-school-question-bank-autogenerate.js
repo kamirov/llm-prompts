@@ -1,3 +1,12 @@
+// Script to run in the JS console to have GPT just keep generating until it reaches the specified question count below. I wrote this because without it, you have to keep reprompting every 5-10 questions or so, because GPT reaches some upper word limit
+
+// To use the script:
+// (1) Edit the questionsToRequest array below with your desired question combo
+// (2) Upload a doc to the custom med-school-question-bank GPT
+// (3) Open the browser console and copy-paste this entire script
+// (4) It should start generating questions, then reprompting GPT automatically. You can monitor the console for any status changes. When it's finished, you'll get an alert saying it's done
+// (5) If you get a "GPT limit reached" message, you can refresh the page at the allowed time, and just copy-paste the script into the console to continue generating questions
+
 const questionsToRequest = [
     "Explanatory 25",
     "Easy 25",
