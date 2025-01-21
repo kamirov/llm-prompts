@@ -13,9 +13,6 @@ If the document includes key points or learning objectives, or otherwise indicat
 
 For the specified difficulty, please use the following guidelines:
 - "Explanatory": Very heavy focus on explanations. The point of these questions is not to test the knowledge, but rather to explain concepts and help students understand things. These should include detailed explanations and etymology sections, and the reason each incorrect answer should be likewise detailed. Please define any non-standard terminology, explain any concepts or mechanisms. Related things that might confuse the student should be mentioned here. Should also include tips to help remember things or differentiate things.
-- "Easy": Simple questions, optional helpful tips in the question itself (for example, if Amlodipine is mentioned, then the question can mention (a calcium channel blocker)). The point of these questions is to test understanding, but still provide some explanations for the right and wrong answers
-- "Medium": Comparatively more difficult questions that match what would appear on a medical school exam, no helpful tips embedded in the questions
-- "Hard": Difficult questions, similar concepts should be explored, and no helpful tips embedded in the questions. Please still offer good explanations in the answers to help students understand
 - "Clinical": Clinical questions - patient cases, for example:
    - Patient presents with symptoms, what care should they receive?
    - Patient says this, what's the next step?
@@ -25,6 +22,7 @@ For the specified difficulty, please use the following guidelines:
    - Here is a clinical scenario, what is the most/least likely initial diagnosis
    - Here is a clinical scenario, and here is a related question
    - etc.
+- "Practice": Difficult questions, no helpful tips should be embedded in the questions (although nominal values for lab results, e.g. Cr serum levels should be included). Please still offer good explanations in the answers to help students understand. Please include questions with "none of the above" and "2 of the above" in the set, to make it even more difficult
 
 If another difficulty is specified, interpret it as you will.
 
