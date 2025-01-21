@@ -9,12 +9,11 @@
 
 const questionsToRequest = [
     "Explanatory 25",
-    "Easy 25",
-    "Hard 25"
+    "Practice 25"
 ];
 const doneMessage = "[DONE]";
 
-const messageToSend = `I'll keep sending this message on a loop. Please keep generating questions until you generate all the questions I've requested. At that point, regardless of the message I send, just respond with "${doneMessage}". The questions I request are: ${questionsToRequest.join(", ")}. Please just respond to this prompt with questions in the format I've previously requested. Thank you!`;
+const messageToSend = `I'll keep sending this message on a loop. Please keep generating questions until you generate all the questions I've requested. At that point, regardless of the message I send, just respond with "${doneMessage}". The questions I request are: ${questionsToRequest.join(", ")}. Please just respond to this prompt with questions in the format I've previously requested. Do not use the phrase "${doneMessage}" at any point, until you are finished with all your questions. If you are approaching the end of your response. Please do not put any concluding remarks (e.g. "Would you like me to continue?" or "Continuing to generate questions", etc. ). Just respond with multiple-choice questions. Thank you!`;
 
 const pollingInterval = 1000;
 
