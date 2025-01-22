@@ -57,7 +57,7 @@ B. blah blah
 ***Tips:*** <new line>
 <bullet> <mnemonics, tips, or tricks to help remember the answer. The tips should be from the perspective of a medical student trying to learn the material for an exam, so the tips should help better recollect the right answer / choose the correct answer during an exam. The tips should be silly, and should help differentiate the right answer from similar wrong answers (e.g. type I vs type II pneumocytes, cardiac tamponade vs pericardial effusion)>
 
-***<link to "https://chatgpt.com", with an existing query sent to GPT (i.e. the ?q parameter) that (a) asks GPT to explain why the right answer is right, and (b) why the other answers are wrong. The link text should be "Detailed explanation", and should be bolded>***
+***<link to "https://chatgpt.com", with an existing query sent to GPT (i.e. the ?q parameter) that (a) asks GPT to explain why the right answer is right, and (b) why the other answers are wrong. The query should be structured as a question, and should be written as an extension of the question you generated. The link text should be "Detailed explanation", and should be bolded.>***
 
 <horizontal line>
 ```
