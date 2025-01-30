@@ -68,12 +68,12 @@ function gptLimitReached() {
     return !!errorBox
 }
 
-function deleteAuthorNodes() {
-    console.log('Deleting author nodes')
-    const nodes = document.querySelectorAll('[data-message-author-role="author"]')
+function deleteUserNodes() {
+    console.log('Deleting user nodes')
+    const nodes = document.querySelectorAll('[data-message-author-role="user"]')
         
     if (!nodes.length) {
-        const err = "No author nodes found to delete"
+        const err = "No user nodes found to delete"
         alert(err)
         throw new Error(err)
     }
@@ -90,7 +90,7 @@ function pollAndSendMessages() {
     }
 
     if (areQuestionsGenerated()) {
-        deleteAuthorNodes();
+        deleteUserNodes();
 
         alert("Questions generated!");
         return
