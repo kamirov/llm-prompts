@@ -145,6 +145,8 @@ function pollAndSendMessages() {
             deleteDoneNodes();
     
             copyQuestionsToClipboard()
+
+            alert("Questions copied!")
         }
 
         return
