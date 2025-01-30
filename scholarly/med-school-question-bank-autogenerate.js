@@ -82,6 +82,7 @@ function deleteUserNodes() {
 }
 
 function deleteDoneNodes() {
+    console.log("Deleting Done nodes")
     const assistantMessageNodes = document.querySelectorAll('[data-message-author-role="assistant"]')
 
     assistantMessageNodes.forEach(node => {
