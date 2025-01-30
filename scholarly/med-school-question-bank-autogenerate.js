@@ -81,6 +81,53 @@ function deleteUserNodes() {
     nodes.forEach(node => node.remove());
 }
 
+function deleteDoneNodes() {
+    const assistantMessageNodes = document.querySelectorAll('[data-message-author-role="assistant"]')
+
+    assistantMessageNodes.forEach(node => {
+
+        const textContent = node.innerText.trim();
+
+        if (textContent === doneMessage) {
+            node.remove();
+        }
+    });
+}
+
+function copyQuestionsToClipboard() {
+    const elements = document.querySelectorAll('div[data-message-author-role="assistant"]');
+
+    if (elements.length === 0) {
+        console.warn("No elements found with data-message-author-role='assistant'");
+        return;
+    }
+
+    // Extract HTML content while preserving formatting
+    const htmlContent = Array.from(elements)
+        .map(el => el.outerHTML)
+        .join("<br><br>"); // Separate messages with line breaks
+
+    // Create a temporary div to hold the HTML content
+    const tempDiv = document.createElement("div");
+    tempDiv.contentEditable = true;
+    tempDiv.style.position = "absolute";
+    tempDiv.style.left = "-9999px"; // Move off-screen
+    tempDiv.innerHTML = htmlContent;
+    document.body.appendChild(tempDiv);
+
+    // Select and copy the content
+    const range = document.createRange();
+    range.selectNodeContents(tempDiv);
+    const selection = window.getSelection();
+    selection.removeAllRanges();
+    selection.addRange(range);
+
+    document.execCommand("copy"); // Copy selected content
+    document.body.removeChild(tempDiv); // Clean up
+
+    console.log("Rich text copied to clipboard!");
+}
+
 // Main loop
 function pollAndSendMessages() {
 
@@ -91,6 +138,8 @@ function pollAndSendMessages() {
 
     if (areQuestionsGenerated()) {
         deleteUserNodes();
+        deleteDoneNodes();
+        copyQuestionsToClipboard()
 
         alert("Questions generated!");
         return
