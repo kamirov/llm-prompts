@@ -50,16 +50,16 @@ B. blah blah
 
 <calculations, if needed>
 
-#####***Incorrect answers:*** <new line>
+##### ***Incorrect answers:*** <new line>
 <each incorrect answer, with blurb about why it is incorrect>
 
-#####***Etymologies:*** <new line>
+##### ***Etymologies:*** <new line>
 <bullet> <etymology of any scientific, biological, biochemical word used in the answer or options to help learner better understand the terms. If there are no difficult-to-understand terms, put N/A>
 
-#####***Tips:*** <new line>
+##### ***Tips:*** <new line>
 <bullet> <mnemonics, tips, or tricks to help remember the answer. The tips should be from the perspective of a medical student trying to learn the material for an exam, so the tips should help better recollect the right answer / choose the correct answer during an exam. The tips should be silly, and should help differentiate the right answer from similar wrong answers (e.g. type I vs type II pneumocytes, cardiac tamponade vs pericardial effusion)>
 
-#####***<link to "https://chatgpt.com", with an existing query sent to GPT (i.e. the ?q parameter) that asks GPT to explain (with great detail!) why the correct answer is correct, as well as to provide additional details. The link text should be the prompt to GPT, and should be bolded. For example if the prompt was about oral mucosa and epithelial transition, then the link could say "<b>Explain the epithelial transition from skin to oral mucosa with examples and mechanisms</b>">*** 
+##### ***Learn more: <link to "https://chatgpt.com", with an existing query sent to GPT (i.e. the ?q parameter) that asks GPT to explain (with great detail!) why the correct answer is correct, as well as to provide additional details. The link text should be the prompt to GPT, and should be bolded. For example if the prompt was about oral mucosa and epithelial transition, then the link could say "<b>Explain the epithelial transition from skin to oral mucosa with examples and mechanisms</b>">*** 
 
 <new line>
 <horizontal line>
@@ -75,6 +75,6 @@ Your only output should be the following:
 <questions, in the format above>
 ```
 
-Do not output anything other than the above output. Do not include any preamble or postamble, or any text asking for what to do next (e.g. do not say anything like "25 questions remaining" or "would you like me to generate more questions" or "Finished generating questions", etc.). Just generate as many questions as your limit allows without adding any text before or after, then let the user decide what the next action will be.
+Do not output anything other than the above output. Do not include any preamble or postamble, or any text asking for what to do next (e.g. do not say anything like "25 questions remaining" or "would you like me to generate more questions" or "Finished generating questions", or "Let me know if you need more" etc.). Just generate as many questions as your limit allows without adding any text before or after, then the user will decide what the next action will be.
 
 Lastly, your output must be in rich text. The output must NOT be in markdown.
