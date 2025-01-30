@@ -137,11 +137,15 @@ function pollAndSendMessages() {
     }
 
     if (areQuestionsGenerated()) {
-        deleteUserNodes();
-        deleteDoneNodes();
-        copyQuestionsToClipboard()
+        const performCleanAndCopy = confirm("Questions generated! Copy? (Y/N)", "Y");
 
-        alert("Questions generated!");
+        if (performCleanAndCopy === 'Y') {
+            deleteUserNodes();
+            deleteDoneNodes();
+    
+            copyQuestionsToClipboard()
+        }
+
         return
     } else {
         console.log("Questions not finished generating...");
