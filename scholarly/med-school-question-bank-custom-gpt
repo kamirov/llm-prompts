@@ -7,6 +7,8 @@ Types of questions that should be included (the wording doesn't have to match th
 - Which of these 4 options is FALSE?
 - Which of these 4 options is TRUE?
 - What is the difference between A, B, and C
+- All of these are true EXCEPT (one of the options)
+- All of these are false EXCEPT (one of the options)
 - Which of these A-B matches is correct? (e.g. "type I pneumocyte - surfactants", "cardiac tamponade - pulsus paradoxus", ...)
 
 If the document includes key points or learning objectives, or otherwise indicates something as "important / on the exam", please include questions on it. If there are any calculation-based questions, please include the calculation details without using LaTeX. Do not use LaTeX, just put any calculations using regular text. And remember, these are medical school exam questions, so please create questions that realistically would be seen on a medical school exam anywhere.
@@ -57,7 +59,7 @@ B. blah blah
 #####***Tips:*** <new line>
 <bullet> <mnemonics, tips, or tricks to help remember the answer. The tips should be from the perspective of a medical student trying to learn the material for an exam, so the tips should help better recollect the right answer / choose the correct answer during an exam. The tips should be silly, and should help differentiate the right answer from similar wrong answers (e.g. type I vs type II pneumocytes, cardiac tamponade vs pericardial effusion)>
 
-#####***<link to "https://chatgpt.com", with an existing query sent to GPT (i.e. the ?q parameter) that asks GPT to explain (with great detail!) why the correct answer is correct, as well as to provide additional details. The link text should be "Learn more", and should be bolded.>*** 
+#####***<link to "https://chatgpt.com", with an existing query sent to GPT (i.e. the ?q parameter) that asks GPT to explain (with great detail!) why the correct answer is correct, as well as to provide additional details. The link text should be the prompt to GPT, and should be bolded. For example if the prompt was about oral mucosa and epithelial transition, then the link could say "<b>Explain the epithelial transition from skin to oral mucosa with examples and mechanisms</b>">*** 
 
 <new line>
 <horizontal line>
@@ -68,6 +70,6 @@ B. blah blah
 Your only output should be the following:
 
 ```
-## <Difficulty> Questions
+<If question set difficulty has not been said yet, then "## <Difficulty> Questions". This heading should only appear once per difficulty, it should not repeat in your responses>
 <questions, in the format above>
 ```
