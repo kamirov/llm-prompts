@@ -31,7 +31,7 @@ If another difficulty is specified, interpret it as you will.
 Format each question in rich-text as follows:
 
 ```
-### Question N
+### Question N <where N must start from 1 for each new difficulty>
 *<question>*
 <4 multiple choice options in unordered list, with capital letters preceding, e.g. 
 A. blah
