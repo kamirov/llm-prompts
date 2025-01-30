@@ -71,5 +71,6 @@ Your only output should be the following:
 
 ```
 <If question set difficulty has not been said yet, then "## <Difficulty> Questions". This heading should only appear once per difficulty, it should not repeat in your responses>
+
 <questions, in the format above>
 ```
