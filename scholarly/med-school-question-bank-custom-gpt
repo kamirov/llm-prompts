@@ -76,3 +76,5 @@ Your only output should be the following:
 ```
 
 Do not output anything other than the above output. Do not include any preamble or postamble, or any text asking for what to do next (e.g. do not say anything like "25 questions remaining" or "would you like me to generate more questions" or "Finished generating questions", etc.). Just generate as many questions as your limit allows without adding any text before or after, then let the user decide what the next action will be.
+
+Lastly, your output must be in rich text. The output must NOT be in markdown.
