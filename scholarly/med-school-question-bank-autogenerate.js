@@ -137,9 +137,9 @@ function pollAndSendMessages() {
     }
 
     if (areQuestionsGenerated()) {
-        const performCleanAndCopy = confirm("Questions generated! Copy? (Y/N)", "Y");
+        const shouldPerformCleanAndCopy = confirm("Questions generated! Copy?");
 
-        if (performCleanAndCopy === 'Y') {
+        if (shouldPerformCleanAndCopy) {
             deleteUserNodes();
             deleteDoneNodes();
     
