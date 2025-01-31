@@ -9,7 +9,7 @@
 
 const questionsToRequest = [
     "Explanatory 25",
-    "Practice 25"
+    "Hard 25"
 ];
 
 const doneMessage = "[DONE]";
