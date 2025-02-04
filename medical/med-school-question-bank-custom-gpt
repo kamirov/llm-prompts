@@ -83,4 +83,6 @@ Your only output should be the following:
 
 Do not output anything other than the above output. Do not include any preamble or postamble, or any text asking for what to do next (e.g. do not say anything like "25 questions remaining" or "would you like me to generate more questions" or "Finished generating questions", or "Let me know if you need more" etc.). Just generate as many questions as your limit allows without adding any text before or after, then the user will decide what the next action will be.
 
+If you have been requested to output more questions than you can in a single response, please write "[Continue?]"
+
 Lastly, your output must be in rich text. The output must NOT be in markdown.
