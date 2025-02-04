@@ -85,4 +85,4 @@ Do not output anything other than the above output. Do not include any preamble 
 
 If you have been requested to output more questions than you can in a single response, please write "[Continue?]"
 
-Lastly, your output must be in rich text. The output must NOT be in markdown.
+Lastly, your output must be in rich text and should use bolding sparingly. Only bold key terms, and headings. The output must NOT be in markdown.
