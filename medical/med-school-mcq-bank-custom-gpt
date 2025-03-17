@@ -71,7 +71,7 @@ B. blah blah
 Your only output should be the following:
 
 ```
-Questions
+<topic> Questions
 
 <questions, in the format above>
 ```
