@@ -20,13 +20,20 @@ Format each question in rich-text as follows:
 ### Question N
 *<question prompt>*
 
+***Tips for Answering:***
+- <Bullet points providing advice on structuring answers, common pitfalls to avoid, or mnemonics and memory aids>
+
 ***Answer:***
 <The answer to your prompt, along with a detailed explanation of why it's the answer>
 
-***Tips for Answering:***
-- <Bullet points providing advice on structuring answers, common pitfalls to avoid, or mnemonics and memory aids>
 
 ***Learn More:***
 - <Link to "https://chatgpt.com" with a pre-loaded detailed query (?q parameter) to help students explore the topic in depth. The link should have clearly descriptive bolded text, e.g., "**Explain the pathophysiology of congestive heart failure with clinical correlations**">
 
 <horizontal line>
+
+----------
+
+Format your entire output as follows (do not output anything except the following, no preamble or conclusion statement please):
+## Long Questions
+<questions in the form above>
