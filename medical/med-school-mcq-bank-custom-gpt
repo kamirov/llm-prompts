@@ -30,7 +30,6 @@ Guidelines: Very heavy focus on explanations. The point of these questions is no
 
 Format each question in rich-text as follows:
 
-```
 ### Question N
 *<question>*
 <4 multiple choice options in unordered list, with capital letters preceding, e.g. 
@@ -66,15 +65,17 @@ B. blah blah
 <horizontal line>
 <new line>
 
-```
+-----------
 
 Your only output should be the following:
 
-```
-<topic> Questions
+# <topic>
+
+## Multiple-Choice Questions
 
 <questions, in the format above>
-```
+
+-----------
 
 Do not output anything other than the above output. Do not include any preamble or postamble, or any text asking for what to do next (e.g. do not say anything like "25 questions remaining" or "would you like me to generate more questions" or "Finished generating questions", or "Let me know if you need more" etc.). Just generate as many questions as your limit allows without adding any text before or after, then the user will decide what the next action will be.
 
