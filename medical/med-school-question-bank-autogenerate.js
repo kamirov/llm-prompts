@@ -8,8 +8,7 @@
 // (5) If you get a "GPT limit reached" message, you can refresh the page at the allowed time, and just copy-paste the script into the console to continue generating questions
 
 const questionsToRequest = [
-    "Explanatory 25",
-    "Hard 25"
+    "25 Questions"
 ];
 
 const doneMessage = "[DONE]";
