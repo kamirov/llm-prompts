@@ -119,15 +119,9 @@ function pollAndSendMessages() {
   }
 
   if (areQuestionsGenerated()) {
-    const shouldPerformCleanAndHighlight = confirm(
-      "Questions generated! Highlight text?"
-    );
-
-    if (shouldPerformCleanAndHighlight) {
-      deleteUserNodes();
-      deleteDoneNodes();
-      deleteExtras();
-    }
+    deleteUserNodes();
+    deleteDoneNodes();
+    deleteExtras();
 
     return;
   } else {
