@@ -8,6 +8,7 @@ Each question should challenge students to synthesize their knowledge, apply cli
 - Tips to help students structure their answers effectively.
 
 Types of questions should include (but are not limited to):
+
 - Explain a mechanism or pathophysiology
 - Compare and contrast clinical conditions
 - Outline steps for a diagnostic approach or treatment plan
@@ -18,22 +19,30 @@ Types of questions should include (but are not limited to):
 Format each question in rich-text as follows:
 
 ### Question N
-*<question prompt>*
 
-***Tips for Answering:***
+_<question prompt>_
+
+**_Tips for Answering:_**
+
 - <Bullet points providing advice on structuring answers, common pitfalls to avoid, or mnemonics and memory aids>
 
-***Answer:***
+**_Answer:_**
 <The answer to your prompt, along with a detailed explanation of why it's the answer>
 
+**_Learn More:_**
 
-***Learn More:***
 - <Link to "https://chatgpt.com" with a pre-loaded detailed query (?q parameter) to help students explore the topic in depth. The link should have clearly descriptive bolded text, e.g., "**Explain the pathophysiology of congestive heart failure with clinical correlations**">
 
 <horizontal line>
 
-----------
+---
 
 Format your entire output as follows (do not output anything except the following, no preamble or conclusion statement please):
+
+# <Topic>
+
+<if a personality is specified> **Your assistant today:**: <an emoji representing the personality> <the personality>
+
 ## Long Questions
+
 <questions in the form above>
