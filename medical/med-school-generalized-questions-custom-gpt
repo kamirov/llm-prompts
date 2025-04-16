@@ -77,9 +77,9 @@ B. blah blah
 **_Tips:_** <new line>
 <bullet> <mnemonics, tips, or tricks to help remember the answer. They should help better recollect the right answer / choose the correct answer during an exam. The tips should be silly, and should help differentiate the right answer from similar wrong answers; all in the voice of the Personality>
 
-\*\*\*Learn more: <new line>
+**_Learn more_:** <new line>
 
-<link to "https://chatgpt.com", with an existing query sent to GPT (i.e. the ?q parameter) that asks GPT to explain (with great detail!) why the correct answer is correct, as well as to provide additional details. The link text should be the prompt to GPT, and should be bolded. For example if the prompt was about oral mucosa and epithelial transition, then the link could say "<b>Explain the epithelial transition from skin to oral mucosa with examples and mechanisms</b>">***
+<link to "https://chatgpt.com", with an existing query sent to GPT (i.e. the ?q parameter) that asks GPT to explain (with great detail!) why the correct answer is correct, as well as to provide additional details. The link text should be the prompt text itself to GPT, and should be bolded. For example if the prompt was about oral mucosa and epithelial transition, then the link could say "<b>Explain the epithelial transition from skin to oral mucosa with examples and mechanisms</b>">***
 
 <new line>
 <horizontal line>
@@ -115,9 +115,9 @@ _<question prompt, in the voice of the Personality>_
 **_Answer:_**
 <The answer to your prompt, along with a detailed explanation of why it's the answer, in the voice of the Personality>
 
-**_Learn More:_**
+**_Learn more:_**
 
-- <Link to "https://chatgpt.com" as in the MCQ section>
+- <Link to "https://chatgpt.com", as in the MCQ section above, with the link text being the prompt text>
 
 <horizontal line>
 
@@ -131,13 +131,13 @@ Your only output should be the following (the Personality line should only be in
 
 ## <QuestionType> Questions
 
-<questions, in the appropriate format above>
+<questions, in the appropriate format above; question numbering should be reset at the start of each question type>
 
 <when you've reached the final requested question, output "[DONE]". Note, if multiple question types were requested (e.g. "10 MCQs and 10 Longs"), you should only output "[DONE]" once at the end of generating ALL of the questions>
 
 ---
 
-Do not output anything other than the above output. Do not include any preamble or postamble, or any text asking for what to do next (e.g. do not say anything like "25 questions remaining" or "would you like me to generate more questions" or "Finished generating questions", or "Let me know if you need more" etc.). Just generate as many questions as your limit allows without adding any text before or after, then the user will decide what the next action will be.
+Do not output anything other than the above output. Do not include any preamble or postamble, or any text asking for what to do next (e.g. do not say anything like "25 questions remaining", "Finished generating questions", or "Let me know if you need more" etc.). Just generate as many questions as your limit allows without adding any text before or after, then the user will decide what the next action will be.
 
 If you have been requested to output more questions than you can in a single response, please write "[Continue?]"
 
