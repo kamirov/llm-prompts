@@ -14,7 +14,7 @@ const questionsToRequest = [
   "10 Long Questions",
 ];
 
-const personality = "";
+const personality = "Bro";
 
 // -- Implementation --
 
