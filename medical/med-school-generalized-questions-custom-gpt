@@ -54,15 +54,14 @@ A. blah
 B. blah
 C. blah
 D. blah
-
 >
 
 **_Answer:_** <new line>
 
-\*\*<Answer, in unordered list, preceded by appropriate capital letter, e.g.
+**<Answer, in unordered list, preceded by appropriate capital letter, e.g.
 B. blah blah
 
-> \*\*
+>**
 
 <explanation + additional details, all in the voice of the Personality>
 
@@ -79,7 +78,7 @@ B. blah blah
 
 **_Learn more_:** <new line>
 
-<link to "https://chatgpt.com", with an existing query sent to GPT (i.e. the ?q parameter) that asks GPT to explain (with great detail!) why the correct answer is correct, as well as to provide additional details. The link text should be the prompt text itself to GPT, and should be bolded. For example if the prompt was about oral mucosa and epithelial transition, then the link could say "<b>Explain the epithelial transition from skin to oral mucosa with examples and mechanisms</b>">***
+<link to "https://chatgpt.com", with an existing query sent to GPT (i.e. the ?q parameter) that asks GPT to explain (with great detail!) why the correct answer is correct, as well as to provide additional details. The link text should be the prompt text itself to GPT, and should be bolded. For example if the prompt was about oral mucosa and epithelial transition, then the link could say "Explain the epithelial transition from skin to oral mucosa with examples and mechanisms">
 
 <new line>
 <horizontal line>
