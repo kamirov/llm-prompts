@@ -10,11 +10,8 @@
 // -- Inputs --
 
 const questionsToRequest = [
-  "25 Multiple Choice Questions",
-  "10 Long Questions",
+  "50 Multiple Choice Questions"
 ];
-
-const personality = "Bro";
 
 // -- Implementation --
 
@@ -27,13 +24,9 @@ if (questionsToRequest.length === 0) {
 
 const doneMessage = "[DONE]";
 
-const personalityMessage = personality
-  ? `The personality of the assistant is ${personality}.`
-  : "";
-
 let messageToSend = `I'll keep sending this message on a loop. Please keep generating questions until you generate all the questions I've requested. At that point, regardless of the message I send, just respond with "${doneMessage}". The questions I request are: ${questionsToRequest.join(
   ", "
-)}. ${personalityMessage} Please just respond to this prompt with questions in the format I've previously requested. Do not use the phrase "${doneMessage}" at any point, until you are finished with all your questions. If you are approaching the end of your response. Please do not put any concluding remarks (e.g. "Would you like me to continue?" or "Continuing to generate questions", or "I'll continue generating the remaining ..." etc. ). Just respond with multiple-choice questions and when you reach the limit of each response, finish the text for the question you're on and wrap the message up wit h a horizontal line <hr />. Lastly, if you are still generating questions for a section you've already started, please do not repeat the difficulty header (i.e. no need to say " Questions" if you've already done that in a previous message. Thank you!`;
+)}. Please just respond to this prompt with questions in the format I've previously requested. Do not use the phrase "${doneMessage}" at any point, until you are finished with all your questions. If you are approaching the end of your response. Please do not put any concluding remarks (e.g. "Would you like me to continue?" or "Continuing to generate questions", or "I'll continue generating the remaining ..." etc. ). Just respond with multiple-choice questions and when you reach the limit of each response, finish the text for the question you're on and wrap the message up wit h a horizontal line <hr />. Lastly, if you are still generating questions for a section you've already started, please do not repeat the difficulty header (i.e. no need to say " Questions" if you've already done that in a previous message. Thank you!`;
 
 const pollingInterval = 1000;
 
