@@ -10,7 +10,10 @@
 // -- Inputs --
 
 const questionsToRequest = [
-  "50 Multiple Choice Questions"
+  "10 Easy MCQs",
+  "10 Medium MCQs",
+  "10 Hard MCQs",
+  "5 Long Questions"
 ];
 
 // -- Implementation --
