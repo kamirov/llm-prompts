@@ -298,14 +298,27 @@ function playStuckSound() {
 let lastActivityTime = Date.now();
 let stuckTimeout = 30000; // 30 seconds timeout
 let stuckSoundPlayed = false;
+let lastContentHash = ""; // Track content changes
 
 function checkForStuck() {
   const currentTime = Date.now();
   const timeSinceLastActivity = currentTime - lastActivityTime;
 
+  // Get current content hash to detect changes
+  const currentContent = getCurrentContentHash();
+  const hasContentChanged = currentContent !== lastContentHash;
+
+  if (hasContentChanged) {
+    // Content is changing, update activity time and reset stuck flag
+    lastContentHash = currentContent;
+    updateActivityTime();
+    return false;
+  }
+
+  // Only consider stuck if no content changes AND timeout exceeded
   if (timeSinceLastActivity > stuckTimeout && !stuckSoundPlayed) {
     console.log(
-      `App appears to be stuck! No activity for ${Math.round(
+      `App appears to be stuck! No content changes for ${Math.round(
         timeSinceLastActivity / 1000
       )} seconds`
     );
@@ -315,6 +328,26 @@ function checkForStuck() {
   }
 
   return false;
+}
+
+function getCurrentContentHash() {
+  try {
+    // Get all assistant message content to detect changes
+    const assistantMessages = document.querySelectorAll(
+      '[data-message-author-role="assistant"]'
+    );
+
+    let content = "";
+    assistantMessages.forEach((msg) => {
+      content += msg.innerText || "";
+    });
+
+    // Create a simple hash of the content
+    return content.length.toString() + "_" + content.slice(-100); // Length + last 100 chars
+  } catch (error) {
+    console.error("Error getting content hash:", error);
+    return "";
+  }
 }
 
 function updateActivityTime() {
