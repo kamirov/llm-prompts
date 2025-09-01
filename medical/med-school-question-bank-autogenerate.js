@@ -199,7 +199,17 @@ function playErrorSound() {
     oscillator.start(audioContext.currentTime);
     oscillator.stop(audioContext.currentTime + 0.3);
 
-    console.log("Error sound played");
+    // Add voice announcement
+    if ("speechSynthesis" in window) {
+      const utterance = new SpeechSynthesisUtterance(
+        "Error: GPT limit reached"
+      );
+      utterance.rate = 0.9;
+      utterance.pitch = 0.8;
+      speechSynthesis.speak(utterance);
+    }
+
+    console.log("Error sound and voice played");
   } catch (error) {
     console.error("Could not play error sound:", error);
   }
@@ -229,7 +239,16 @@ function playSuccessSound() {
     oscillator.start(audioContext.currentTime);
     oscillator.stop(audioContext.currentTime + 0.3);
 
-    console.log("Success sound played");
+    // Add voice announcement
+    if ("speechSynthesis" in window) {
+      const utterance = new SpeechSynthesisUtterance();
+      ("Success: Questions generated");
+      utterance.rate = 0.9;
+      utterance.pitch = 1.2;
+      speechSynthesis.speak(utterance);
+    }
+
+    console.log("Success sound and voice played");
   } catch (error) {
     console.error("Could not play success sound:", error);
   }
@@ -261,7 +280,15 @@ function playStuckSound() {
     oscillator.start(audioContext.currentTime);
     oscillator.stop(audioContext.currentTime + 1.0);
 
-    console.log("Stuck sound played");
+    // Add voice announcement
+    if ("speechSynthesis" in window) {
+      const utterance = new SpeechSynthesisUtterance("Warning: AI is stuck");
+      utterance.rate = 0.8;
+      utterance.pitch = 0.9;
+      speechSynthesis.speak(utterance);
+    }
+
+    console.log("Stuck sound and voice played");
   } catch (error) {
     console.error("Could not play stuck sound:", error);
   }
