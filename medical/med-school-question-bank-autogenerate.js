@@ -9,12 +9,7 @@
 
 // -- Inputs --
 
-const questionsToRequest = [
-  "10 Easy MCQs",
-  "10 Medium MCQs",
-  "10 Hard MCQs",
-  "5 Long Questions"
-];
+const questionsToRequest = ["25 MCQs", "5 Long Questions", "25 Hard MCQs"];
 
 // -- Implementation --
 
@@ -127,6 +122,59 @@ function deleteExtras() {
   });
 }
 
+function deleteContinueNodes() {
+  console.log("Deleting Continue nodes");
+  const continueMessage = "[Continue?]";
+
+  // Check assistant message nodes
+  const assistantMessageNodes = document.querySelectorAll(
+    '[data-message-author-role="assistant"]'
+  );
+
+  assistantMessageNodes.forEach((node) => {
+    const textContent = node.innerText.trim();
+
+    if (textContent === continueMessage) {
+      node.remove();
+    }
+  });
+
+  // Check all paragraph nodes
+  const continueNodes = document.querySelectorAll("p");
+
+  continueNodes.forEach((node) => {
+    const textContent = node.innerText.trim();
+
+    if (textContent === continueMessage) {
+      node.remove();
+    }
+  });
+}
+
+function deleteButtonNodes() {
+  console.log("Deleting all button nodes");
+  const buttonNodes = document.querySelectorAll("button");
+
+  if (buttonNodes.length > 0) {
+    buttonNodes.forEach((button) => button.remove());
+    console.log(`Removed ${buttonNodes.length} button(s)`);
+  } else {
+    console.log("No button nodes found to delete");
+  }
+}
+
+function deleteSidebarNodes() {
+  console.log("Deleting sidebar nodes");
+  const sidebar = document.querySelector("#stage-slideover-sidebar");
+
+  if (sidebar) {
+    sidebar.remove();
+    console.log("Sidebar removed successfully");
+  } else {
+    console.log("No sidebar found to delete");
+  }
+}
+
 // Main loop
 function pollAndSendMessages() {
   if (gptLimitReached()) {
@@ -137,6 +185,9 @@ function pollAndSendMessages() {
   if (areQuestionsGenerated()) {
     deleteUserNodes();
     deleteDoneNodes();
+    deleteContinueNodes();
+    deleteButtonNodes();
+    deleteSidebarNodes();
     deleteExtras();
 
     return;
