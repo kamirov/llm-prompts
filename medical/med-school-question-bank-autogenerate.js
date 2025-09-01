@@ -175,10 +175,136 @@ function deleteSidebarNodes() {
   }
 }
 
+function playErrorSound() {
+  try {
+    // Create a simple error sound using Web Audio API
+    const audioContext = new (window.AudioContext ||
+      window.webkitAudioContext)();
+    const oscillator = audioContext.createOscillator();
+    const gainNode = audioContext.createGain();
+
+    oscillator.connect(gainNode);
+    gainNode.connect(audioContext.destination);
+
+    oscillator.frequency.setValueAtTime(200, audioContext.currentTime);
+    oscillator.frequency.setValueAtTime(150, audioContext.currentTime + 0.1);
+    oscillator.frequency.setValueAtTime(100, audioContext.currentTime + 0.2);
+
+    gainNode.gain.setValueAtTime(0.3, audioContext.currentTime);
+    gainNode.gain.exponentialRampToValueAtTime(
+      0.01,
+      audioContext.currentTime + 0.3
+    );
+
+    oscillator.start(audioContext.currentTime);
+    oscillator.stop(audioContext.currentTime + 0.3);
+
+    console.log("Error sound played");
+  } catch (error) {
+    console.error("Could not play error sound:", error);
+  }
+}
+
+function playSuccessSound() {
+  try {
+    // Create a simple success sound using Web Audio API
+    const audioContext = new (window.AudioContext ||
+      window.webkitAudioContext)();
+    const oscillator = audioContext.createOscillator();
+    const gainNode = audioContext.createGain();
+
+    oscillator.connect(gainNode);
+    gainNode.connect(audioContext.destination);
+
+    oscillator.frequency.setValueAtTime(800, audioContext.currentTime);
+    oscillator.frequency.setValueAtTime(1000, audioContext.currentTime + 0.1);
+    oscillator.frequency.setValueAtTime(1200, audioContext.currentTime + 0.2);
+
+    gainNode.gain.setValueAtTime(0.3, audioContext.currentTime);
+    gainNode.gain.exponentialRampToValueAtTime(
+      0.01,
+      audioContext.currentTime + 0.3
+    );
+
+    oscillator.start(audioContext.currentTime);
+    oscillator.stop(audioContext.currentTime + 0.3);
+
+    console.log("Success sound played");
+  } catch (error) {
+    console.error("Could not play success sound:", error);
+  }
+}
+
+function playStuckSound() {
+  try {
+    // Create a stuck sound using Web Audio API - repetitive beeping pattern
+    const audioContext = new (window.AudioContext ||
+      window.webkitAudioContext)();
+    const oscillator = audioContext.createOscillator();
+    const gainNode = audioContext.createGain();
+
+    oscillator.connect(gainNode);
+    gainNode.connect(audioContext.destination);
+
+    // Create a repetitive beeping pattern
+    for (let i = 0; i < 3; i++) {
+      const startTime = audioContext.currentTime + i * 0.3;
+
+      oscillator.frequency.setValueAtTime(400, startTime);
+      oscillator.frequency.setValueAtTime(600, startTime + 0.1);
+
+      gainNode.gain.setValueAtTime(0, startTime);
+      gainNode.gain.setValueAtTime(0.3, startTime + 0.01);
+      gainNode.gain.setValueAtTime(0, startTime + 0.15);
+    }
+
+    oscillator.start(audioContext.currentTime);
+    oscillator.stop(audioContext.currentTime + 1.0);
+
+    console.log("Stuck sound played");
+  } catch (error) {
+    console.error("Could not play stuck sound:", error);
+  }
+}
+
+// Timeout detection variables
+let lastActivityTime = Date.now();
+let stuckTimeout = 30000; // 30 seconds timeout
+let stuckSoundPlayed = false;
+
+function checkForStuck() {
+  const currentTime = Date.now();
+  const timeSinceLastActivity = currentTime - lastActivityTime;
+
+  if (timeSinceLastActivity > stuckTimeout && !stuckSoundPlayed) {
+    console.log(
+      `App appears to be stuck! No activity for ${Math.round(
+        timeSinceLastActivity / 1000
+      )} seconds`
+    );
+    playStuckSound();
+    stuckSoundPlayed = true;
+    return true;
+  }
+
+  return false;
+}
+
+function updateActivityTime() {
+  lastActivityTime = Date.now();
+  stuckSoundPlayed = false; // Reset stuck flag when activity is detected
+}
+
 // Main loop
 function pollAndSendMessages() {
+  // Check for stuck condition first
+  if (checkForStuck()) {
+    console.log("App is stuck, continuing to monitor...");
+  }
+
   if (gptLimitReached()) {
     console.log("GPT limit reached!");
+    playErrorSound();
     return;
   }
 
@@ -189,6 +315,8 @@ function pollAndSendMessages() {
     deleteButtonNodes();
     deleteSidebarNodes();
     deleteExtras();
+    playSuccessSound();
+    updateActivityTime(); // Update activity time when questions are done
 
     return;
   } else {
@@ -197,6 +325,7 @@ function pollAndSendMessages() {
 
   if (isAssistantDoneTyping()) {
     sendMessage();
+    updateActivityTime(); // Update activity time when sending message
   } else {
     console.log("Assistant is still typing...");
   }
