@@ -254,81 +254,9 @@ function playSuccessSound() {
   }
 }
 
-function playStuckSound() {
-  try {
-    // Create a stuck sound using Web Audio API - repetitive beeping pattern
-    const audioContext = new (window.AudioContext ||
-      window.webkitAudioContext)();
-    const oscillator = audioContext.createOscillator();
-    const gainNode = audioContext.createGain();
-
-    oscillator.connect(gainNode);
-    gainNode.connect(audioContext.destination);
-
-    // Create a repetitive beeping pattern
-    for (let i = 0; i < 3; i++) {
-      const startTime = audioContext.currentTime + i * 0.3;
-
-      oscillator.frequency.setValueAtTime(400, startTime);
-      oscillator.frequency.setValueAtTime(600, startTime + 0.1);
-
-      gainNode.gain.setValueAtTime(0, startTime);
-      gainNode.gain.setValueAtTime(0.3, startTime + 0.01);
-      gainNode.gain.setValueAtTime(0, startTime + 0.15);
-    }
-
-    oscillator.start(audioContext.currentTime);
-    oscillator.stop(audioContext.currentTime + 1.0);
-
-    // Add voice announcement
-    if ("speechSynthesis" in window) {
-      const utterance = new SpeechSynthesisUtterance("Warning: AI is stuck");
-      utterance.rate = 0.8;
-      utterance.pitch = 0.9;
-      speechSynthesis.speak(utterance);
-    }
-
-    console.log("Stuck sound and voice played");
-  } catch (error) {
-    console.error("Could not play stuck sound:", error);
-  }
-}
-
 // Timeout detection variables
 let lastActivityTime = Date.now();
-let stuckTimeout = 30000; // 30 seconds timeout
-let stuckSoundPlayed = false;
 let lastContentHash = ""; // Track content changes
-
-function checkForStuck() {
-  const currentTime = Date.now();
-  const timeSinceLastActivity = currentTime - lastActivityTime;
-
-  // Get current content hash to detect changes
-  const currentContent = getCurrentContentHash();
-  const hasContentChanged = currentContent !== lastContentHash;
-
-  if (hasContentChanged) {
-    // Content is changing, update activity time and reset stuck flag
-    lastContentHash = currentContent;
-    updateActivityTime();
-    return false;
-  }
-
-  // Only consider stuck if no content changes AND timeout exceeded
-  if (timeSinceLastActivity > stuckTimeout && !stuckSoundPlayed) {
-    console.log(
-      `App appears to be stuck! No content changes for ${Math.round(
-        timeSinceLastActivity / 1000
-      )} seconds`
-    );
-    playStuckSound();
-    stuckSoundPlayed = true;
-    return true;
-  }
-
-  return false;
-}
 
 function getCurrentContentHash() {
   try {
@@ -352,15 +280,10 @@ function getCurrentContentHash() {
 
 function updateActivityTime() {
   lastActivityTime = Date.now();
-  stuckSoundPlayed = false; // Reset stuck flag when activity is detected
 }
 
 // Main loop
 function pollAndSendMessages() {
-  // Check for stuck condition first
-  if (checkForStuck()) {
-    console.log("App is stuck, continuing to monitor...");
-  }
 
   if (gptLimitReached()) {
     console.log("GPT limit reached!");
