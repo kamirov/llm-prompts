@@ -83,7 +83,13 @@ function deleteUserNodes() {
     throw new Error(err);
   }
 
-  nodes.forEach((node) => node.remove());
+  nodes.forEach((node) => {
+    try {
+      node.remove();
+    } catch (error) {
+      console.error("Error removing user node:", error);
+    }
+  });
 }
 
 function deleteDoneNodes() {
@@ -96,7 +102,11 @@ function deleteDoneNodes() {
     const textContent = node.innerText.trim();
 
     if (textContent === doneMessage) {
-      node.remove();
+      try {
+        node.remove();
+      } catch (error) {
+        console.error("Error removing done node (assistant):", error);
+      }
     }
   });
 
@@ -106,7 +116,11 @@ function deleteDoneNodes() {
     const textContent = node.innerText.trim();
 
     if (textContent === doneMessage) {
-      node.remove();
+      try {
+        node.remove();
+      } catch (error) {
+        console.error("Error removing done node (paragraph):", error);
+      }
     }
   });
 }
@@ -118,7 +132,11 @@ function deleteExtras() {
   );
 
   extraNodes.forEach((node) => {
-    node.remove();
+    try {
+      node.remove();
+    } catch (error) {
+      console.error("Error removing extra node:", error);
+    }
   });
 }
 
@@ -135,7 +153,11 @@ function deleteContinueNodes() {
     const textContent = node.innerText.trim();
 
     if (textContent === continueMessage) {
-      node.remove();
+      try {
+        node.remove();
+      } catch (error) {
+        console.error("Error removing continue node (assistant):", error);
+      }
     }
   });
 
@@ -146,7 +168,11 @@ function deleteContinueNodes() {
     const textContent = node.innerText.trim();
 
     if (textContent === continueMessage) {
-      node.remove();
+      try {
+        node.remove();
+      } catch (error) {
+        console.error("Error removing continue node (paragraph):", error);
+      }
     }
   });
 }
@@ -156,7 +182,13 @@ function deleteButtonNodes() {
   const buttonNodes = document.querySelectorAll("button");
 
   if (buttonNodes.length > 0) {
-    buttonNodes.forEach((button) => button.remove());
+    buttonNodes.forEach((button) => {
+      try {
+        button.remove();
+      } catch (error) {
+        console.error("Error removing button node:", error);
+      }
+    });
     console.log(`Removed ${buttonNodes.length} button(s)`);
   } else {
     console.log("No button nodes found to delete");
@@ -168,8 +200,12 @@ function deleteSidebarNodes() {
   const sidebar = document.querySelector("#stage-slideover-sidebar");
 
   if (sidebar) {
-    sidebar.remove();
-    console.log("Sidebar removed successfully");
+    try {
+      sidebar.remove();
+      console.log("Sidebar removed successfully");
+    } catch (error) {
+      console.error("Error removing sidebar:", error);
+    }
   } else {
     console.log("No sidebar found to delete");
   }
