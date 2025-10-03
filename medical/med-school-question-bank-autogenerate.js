@@ -20,6 +20,26 @@ if (questionsToRequest.length === 0) {
   throw new Error("No questions specified in the questionsToRequest array.");
 }
 
+// Parse the highest question count from questionsToRequest array
+function getHighestQuestionCount() {
+  let highestCount = 0;
+
+  questionsToRequest.forEach((request) => {
+    // Extract numbers from strings like "25 MCQs", "5 Long Questions", etc.
+    const match = request.match(/(\d+)/);
+    if (match) {
+      const count = parseInt(match[1], 10);
+      if (count > highestCount) {
+        highestCount = count;
+      }
+    }
+  });
+
+  console.log(`Highest question count detected: ${highestCount}`);
+  return highestCount;
+}
+
+const highestQuestionCount = getHighestQuestionCount();
 const doneMessage = "[DONE]";
 
 let messageToSend = `I'll keep sending this message on a loop. Please keep generating questions until you generate all the questions I've requested. At that point, regardless of the message I send, just respond with "${doneMessage}". The questions I request are: ${questionsToRequest.join(
@@ -65,7 +85,33 @@ function areQuestionsGenerated() {
     .map((node) => node.innerText)
     .join(" ");
 
-  return assistantMessageTextAggregate.includes(doneMessage);
+  // Check for the done message first
+  if (assistantMessageTextAggregate.includes(doneMessage)) {
+    return true;
+  }
+
+  // Check if any question count exceeds the highest requested count
+  const questionCountRegex = /Question\s+(\d+)/gi;
+  let match;
+  let maxQuestionNumber = 0;
+
+  while (
+    (match = questionCountRegex.exec(assistantMessageTextAggregate)) !== null
+  ) {
+    const questionNumber = parseInt(match[1], 10);
+    if (questionNumber > maxQuestionNumber) {
+      maxQuestionNumber = questionNumber;
+    }
+  }
+
+  if (maxQuestionNumber > highestQuestionCount) {
+    console.log(
+      `Question count exceeded! Found Question ${maxQuestionNumber}, but highest requested was ${highestQuestionCount}`
+    );
+    return true;
+  }
+
+  return false;
 }
 
 function gptLimitReached() {
@@ -320,7 +366,6 @@ function updateActivityTime() {
 
 // Main loop
 function pollAndSendMessages() {
-
   if (gptLimitReached()) {
     console.log("GPT limit reached!");
     playErrorSound();
