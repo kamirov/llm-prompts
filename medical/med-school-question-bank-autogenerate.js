@@ -257,6 +257,26 @@ function deleteSidebarNodes() {
   }
 }
 
+function deleteEdgeDivs() {
+  console.log("Deleting edge divs");
+  const edgeDivs = document.querySelectorAll(
+    'div[aria-hidden="true"][data-edge="true"]'
+  );
+
+  if (edgeDivs.length > 0) {
+    edgeDivs.forEach((div) => {
+      try {
+        div.remove();
+      } catch (error) {
+        console.error("Error removing edge div:", error);
+      }
+    });
+    console.log(`Removed ${edgeDivs.length} edge div(s)`);
+  } else {
+    console.log("No edge divs found to delete");
+  }
+}
+
 function playErrorSound() {
   try {
     // Create a simple error sound using Web Audio API
@@ -378,6 +398,7 @@ function pollAndSendMessages() {
     deleteContinueNodes();
     deleteButtonNodes();
     deleteSidebarNodes();
+    deleteEdgeDivs();
     deleteExtras();
     playSuccessSound();
     updateActivityTime(); // Update activity time when questions are done
